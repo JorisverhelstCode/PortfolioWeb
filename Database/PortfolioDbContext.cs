@@ -22,17 +22,17 @@ namespace PortfolioWeb.Database
             modelBuilder.Entity<ProjectStatus>().HasData(
                 new ProjectStatus()
                 {
-                    ID = 1,
+                    Id = 1,
                     Name = "Gepasseerd"
                 },
                 new ProjectStatus()
                 {
-                    ID = 2,
+                    Id = 2,
                     Name = "Mee bezig"
                 },
                 new ProjectStatus()
                 {
-                    ID = 3,
+                    Id = 3,
                     Name = "Toekomstig"
                 });
 
@@ -57,9 +57,9 @@ namespace PortfolioWeb.Database
                 new Tag() { Id = 4, Name = "Demo" });
         }
 
-        public DbSet<Project> Movies { get; set; }
+        public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectStatus> ProjectStatuses { get; set; }
         public DbSet<Tag> Tags { get; set; }
-        public DbSet<ProjectTag> MovieTags { get; set; }
+        public DbSet<ProjectTag> ProjectTags { get; set; }
     }
 }
