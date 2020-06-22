@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PortfolioWeb.Database
 {
-    public class PortfolioDbContext : IdentityDbContext<PortfolioAppUser>
+    public class PortfolioDbContext : IdentityDbContext<ProjectAppUser>
     {
         public PortfolioDbContext(DbContextOptions<PortfolioDbContext> options) : base(options)
         {
@@ -36,15 +36,15 @@ namespace PortfolioWeb.Database
                     Name = "Toekomstig"
                 });
 
-            modelBuilder.Entity<PortfolioTag>()
+            modelBuilder.Entity<ProjectTag>()
                 .HasKey(mt => new { mt.PortfolioID, mt.TagId });
 
-            modelBuilder.Entity<PortfolioTag>()
+            modelBuilder.Entity<ProjectTag>()
                 .HasOne(mt => mt.Portfolio)
-                .WithMany(m => m.PortfolioTags)
+                .WithMany(m => m.ProjectTags)
                 .HasForeignKey(mt => mt.PortfolioID);
 
-            modelBuilder.Entity<PortfolioTag>()
+            modelBuilder.Entity<ProjectTag>()
                 .HasOne(mt => mt.Tag)
                 .WithMany(t => t.PortfolioTags)
                 .HasForeignKey(mt => mt.TagId);
@@ -57,9 +57,9 @@ namespace PortfolioWeb.Database
                 new Tag() { Id = 4, Name = "Demo" });
         }
 
-        public DbSet<Portfolio> Movies { get; set; }
+        public DbSet<Project> Movies { get; set; }
         public DbSet<ProjectStatus> ProjectStatuses { get; set; }
         public DbSet<Tag> Tags { get; set; }
-        public DbSet<PortfolioTag> MovieTags { get; set; }
+        public DbSet<ProjectTag> MovieTags { get; set; }
     }
 }

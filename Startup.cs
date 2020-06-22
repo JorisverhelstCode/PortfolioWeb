@@ -34,7 +34,7 @@ namespace PortfolioWeb
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<PortfolioAppUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<ProjectAppUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<PortfolioDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();

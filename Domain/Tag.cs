@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,8 +8,9 @@ namespace PortfolioWeb.Domain
 {
     public class Tag
     {
+        [Key]
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<PortfolioTag> PortfolioTags { get; set; }
+        public ICollection<ProjectTag> PortfolioTags { get; set; }
     }
 }

@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace PortfolioWeb.Domain
 {
-    public class Portfolio
+    public class Project
     {
         public string Title { get; set; }
 
         [Key]
         public int Id { get; set; }
 
-        public ICollection<PortfolioTag> PortfolioTags { get; set; }
+        public ICollection<ProjectTag> ProjectTags { get; set; }
+        public string PhotoUrl { get; set; }
+        public string Description { get; set; }
+        public ProjectStatus Status { get; set; }
     }
 }

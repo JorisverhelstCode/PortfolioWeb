@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PortfolioWeb.Domain
 {
-    public class PortfolioAppUser : IdentityUser
+    public class ProjectAppUser : IdentityUser
     {
         public bool Sex { get; set; }
     }
